@@ -7,7 +7,7 @@ const Home = () => (
   <Wrapper>
     <SearchBar />
     
-    <CityOverview />
+    <CityOverview city='Tel Aviv'/>
   </Wrapper>)
 
 export default Home
