@@ -1,22 +1,32 @@
+import { ADD_CITY_FORECAST, ADD_FAVORITE, REMOVE_FAVORITE } from "./actionTypes"
+
 const initialState = {
-  isFavoritesSelected: false,
-  selectedCity: 'Tel Aviv',
+  favoriteCitiesIds : [],
+  citiesForecast : {}
 }
 
 export default function appReducer(state = initialState, action) {
   switch (action.type) {
-    case 'tab/selectFavorites': {
+    case ADD_FAVORITE: {
       return {
         ...state,
-        isFavoritesSelected: true
+        favoriteCitiesIds: [...state.favoriteCitiesIds, action.payload.cityId]
       }
     };
-    case 'tab/selectHome': {
+    case REMOVE_FAVORITE: {
       return {
         ...state,
-        isFavoritesSelected: false
+        favoriteCitiesIds: state.favoriteCitiesIds.filter(cityId => cityId !== action.payload.cityId)
       }
-    }
+    };
+    case ADD_CITY_FORECAST: {
+      return {
+        ...state,
+        citiesForecast: {...state.citiesForecast, 
+          [action.payload.cityId]: action.payload.upcomingForecast
+        }
+      }
+    };
     default:
       return state
   }

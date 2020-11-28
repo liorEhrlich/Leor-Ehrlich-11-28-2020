@@ -176,11 +176,13 @@ const CityOverview = ({city}) => {
     const cityKeyJson = await cityKeyResponse.json();
 
     const [{Key: cityKey}] = cityKeyJson
-
+    
+    console.log('cityKey', cityKey);
+    
     const upcomingForecastResponse = await fetchUpcomingForecast(cityKey);
     const upcomingForecastJson = await upcomingForecastResponse.json();
 
-    console.log(upcomingForecastJson);
+    console.log('upcomingForecastJson', upcomingForecastJson);
     };
  
     getCityKey();

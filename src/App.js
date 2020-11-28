@@ -1,12 +1,19 @@
-import SearchBar from "./components/common/SearchBar";
+import { useState } from "react";
+
+import FavoritesContainer from "./components/favorites/FavoritesContainer";
 import Home from "./components/home/Home";
-import HeaderContainer from "./components/layout/header/HeaderContainer";
+import Header from "./components/layout/Header"
 
 function App() {
+  const [isHomeSelected, setIsHomeSelected] = useState(true)
+
   return (
     <div>
-      <HeaderContainer />
-      <Home />
+      <Header onSetIsHomeSelected={setIsHomeSelected}/>
+
+      {isHomeSelected ?
+      <Home /> :
+      <FavoritesContainer /> }
     </div>
   );
 }

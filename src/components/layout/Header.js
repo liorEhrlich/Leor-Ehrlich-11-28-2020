@@ -1,18 +1,18 @@
 import styled from 'styled-components'
-import Button from '../../common/Button'
+import Button from '../common/Button'
 
-import Logo from '../Logo'
+import Logo from './Logo'
 
-const Header = () => (
+const Header = ({onSetIsHomeSelected}) => (
   <Wrapper>
     <Logo />
 
     <div >
-      <Button>
+      <Button onClick={onSetIsHomeSelected}>
         Home
       </Button>
 
-      <Button>
+      <Button onClick={() => onSetIsHomeSelected(false)}>
         Favorites
       </Button>
     </div>
