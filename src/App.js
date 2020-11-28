@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import FavoritesContainer from "./components/favorites/FavoritesContainer";
+import FavoritesContainer from "./components/favorites/favoritesComponent/FavoritesContainer";
 import Home from "./components/home/Home";
 import Header from "./components/layout/Header"
 

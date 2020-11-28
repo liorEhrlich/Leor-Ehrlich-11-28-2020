@@ -1,4 +1,5 @@
 import styled from "styled-components"
+
 import DayCard from "./DayCard"
 
 const DailyForecasts = ({dailyForecasts}) => (<Wrapper>

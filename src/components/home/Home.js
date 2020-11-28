@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import SearchBar from "../common/SearchBar";
-import CityOverviewContainer from "./CityOverviewContainer";
+import CityOverviewContainer from "./cityOverview/CityOverviewContainer";
 
 
 const Home = () => (

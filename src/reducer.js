@@ -2,7 +2,8 @@ import { ADD_CITY_FORECAST, ADD_FAVORITE, REMOVE_FAVORITE } from "./actionTypes"
 
 const initialState = {
   favoriteCitiesIds : [],
-  citiesForecast : {}
+  citiesForecast : {},
+  selectedCityId : ''
 }
 
 export default function appReducer(state = initialState, action) {

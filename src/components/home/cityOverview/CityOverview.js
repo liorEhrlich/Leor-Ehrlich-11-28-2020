@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import styled from "styled-components"
 
-import { fetchCityKey, fetchUpcomingForecast } from "../../utils"
-import Favorite from "../common/Favorite"
-import DailyForecasts from "./DailyForecasts"
+import { fetchCityKey, fetchUpcomingForecast } from "../../../utils"
+import Favorite from "../../common/Favorite"
+import DailyForecasts from "../DailyForecasts"
 
 const fetchedDailyForecasts = [
   {
