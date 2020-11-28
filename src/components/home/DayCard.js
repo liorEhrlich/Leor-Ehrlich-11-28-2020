@@ -1,12 +1,12 @@
 import styled from "styled-components"
 
-const DayForecast = ({forecast}) => (
+const DayCard = ({forecast}) => (
   <Wrapper>
     weather
   </Wrapper>
 )
 
-export default DayForecast
+export default DayCard
 
 const Wrapper = styled.div`
   display: inline-block;

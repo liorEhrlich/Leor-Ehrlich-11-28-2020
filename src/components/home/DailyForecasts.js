@@ -1,9 +1,9 @@
 import styled from "styled-components"
-import DayForecast from "./DayForecast"
+import DayCard from "./DayCard"
 
 const DailyForecasts = ({dailyForecasts}) => (<Wrapper>
     {dailyForecasts.map((forecast, index) => (
-      <DayForecast key={`forecast-${index}`} forecast={forecast}/>)
+      <DayCard key={`forecast-${index}`} forecast={forecast}/>)
     )}
   </Wrapper>)
 
