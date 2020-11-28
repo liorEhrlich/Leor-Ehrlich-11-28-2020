@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import styled from "styled-components"
 
-import { fetchFromApi } from "../../utils"
+import { fetchCityKey, fetchUpcomingForecast } from "../../utils"
 import Favorite from "../common/Favorite"
 import DailyForecasts from "./DailyForecasts"
 
@@ -167,20 +167,23 @@ const fetchedDailyForecasts = [
 
 const CityOverview = ({city}) => {
   useEffect(() => {
-    const fetchCityKey = async () => {
+    const getCityKey = async () => {
       const params = { 
         q: city
        };
 
-    const response = await fetchFromApi(params);
-    const json = await response.json();
+    const cityKeyResponse = await fetchCityKey(params);
+    const cityKeyJson = await cityKeyResponse.json();
 
-    const [{Key: cityKey}] = json
+    const [{Key: cityKey}] = cityKeyJson
 
-       console.log(cityKey);
+    const upcomingForecastResponse = await fetchUpcomingForecast(cityKey);
+    const upcomingForecastJson = await upcomingForecastResponse.json();
+
+    console.log(upcomingForecastJson);
     };
  
-    fetchCityKey();
+    getCityKey();
   }, [city]);
 
   return (

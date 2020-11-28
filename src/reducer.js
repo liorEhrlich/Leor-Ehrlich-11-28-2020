@@ -1,6 +1,6 @@
 const initialState = {
   isFavoritesSelected: false,
-  selectedCityId: 1,
+  selectedCity: 'Tel Aviv',
 }
 
 export default function appReducer(state = initialState, action) {

@@ -1,13 +1,14 @@
 import styled from "styled-components";
-import CityOverview from "./CityOverview";
 
-const { default: SearchBar } = require("../common/SearchBar");
+import SearchBar from "../common/SearchBar";
+import CityOverviewContainer from "./CityOverviewContainer";
+
 
 const Home = () => (
   <Wrapper>
     <SearchBar />
-    
-    <CityOverview city='Tel Aviv'/>
+
+    <CityOverviewContainer/>
   </Wrapper>)
 
 export default Home
