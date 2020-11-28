@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import Button from '../common/Button'
+import Button from '../../common/Button'
 
-import Logo from './Logo'
+import Logo from '../Logo'
 
 const Header = () => (
   <Wrapper>
