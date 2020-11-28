@@ -24,5 +24,8 @@ export default Header
 const Wrapper = styled.header`
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  align-items: center;
+  height: 70px;
+  padding: 0 20px;
+  background-color: ${props => props.theme.colors.secondaryBackground};
 `

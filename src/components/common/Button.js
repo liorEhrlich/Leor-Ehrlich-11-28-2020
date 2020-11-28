@@ -7,9 +7,12 @@ const Button = styled.button`
   font-weight: bold;
   color: ${props => props.theme.colors.primaryBackground};
   border: 2px solid ${props => props.theme.colors.secondary};
+  margin: 0 5px;
+  transition: 0.3s;
 
   :hover {
     cursor: pointer;
+    opacity: 0.8;
   }
 `
 
