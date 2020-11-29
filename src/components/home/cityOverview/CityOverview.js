@@ -4,8 +4,8 @@ import DailyForecasts from "../DailyForecasts"
 import ToggleFavoriteContainer from "../toggleFavorite/ToggleFavoriteContainer"
 import useFetchCityForecast from "../useFetchCityForecast"
 
-const CityOverview = ({cityName}) => {
-  const cityForecast = useFetchCityForecast(cityName)
+const CityOverview = ({cityName, cityWeather, addCityWeather}) => {
+  const cityForecast = useFetchCityForecast(cityName, cityWeather, addCityWeather)
 
   return (
   <Wrapper>

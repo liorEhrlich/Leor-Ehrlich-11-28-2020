@@ -4,8 +4,8 @@ import { fetchedDailyForecasts } from "../../constants"
 import {fetchCityKey, fetchUpcomingForecast} from "../../utils/apiUtils"
 import {normalizeUpcomingForecast} from "../../utils/utils"
 
-const useFetchCityForecast = (cityName) => {
-  const [cityForecast, setCityForecast] = useState('')
+const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
+  const [cityForecast, setCityForecast] = useState(cityWeather)
 
   useEffect(() => {
     const getCityForecast = async () => {
@@ -27,9 +27,15 @@ const useFetchCityForecast = (cityName) => {
     const forecsat = normalizeUpcomingForecast(fetchedDailyForecasts)
 
     setCityForecast(forecsat)
-    };
 
-    getCityForecast();
+    const cityWeather = {[cityName] : forecsat}
+    
+    addCityWeather(cityWeather)
+    };
+    
+    if(!cityForecast){
+      getCityForecast();
+    }
   }, []);
 
   return cityForecast
