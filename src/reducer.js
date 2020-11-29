@@ -1,4 +1,4 @@
-import { ADD_FAVORITE, REMOVE_FAVORITE } from "./actionTypes"
+import { ADD_FAVORITE, REMOVE_FAVORITE } from "./actions/actionTypes"
 
 const initialState = {
   favoriteCities : [],

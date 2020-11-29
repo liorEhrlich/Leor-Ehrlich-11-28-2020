@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 
 import ToggleFavorite from "./ToggleFavorite"
-import { addFavorite, removeFavorite } from "../../../actionCreators"
+import { addFavorite, removeFavorite } from "../../../actions/actionCreators"
 
 const mapStateToProps = (state) => {
   return {
