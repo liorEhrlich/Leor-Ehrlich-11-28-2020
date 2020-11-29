@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
-const CityCard = ({city}) => (
+const CityCard = ({cityName}) => (
 <Wrapper>
-city
+{cityName}
 </Wrapper>)
 
 export default CityCard

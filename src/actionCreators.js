@@ -1,22 +1,15 @@
-import { ADD_CITY_FORECAST, ADD_FAVORITE, REMOVE_FAVORITE } from "./actionTypes";
+import { ADD_FAVORITE, REMOVE_FAVORITE } from "./actionTypes";
 
-export function addFavorite(cityId) {
+export function addFavorite(cityName) {
   return {
     type: ADD_FAVORITE,
-    payload: cityId
+    payload: cityName
   }
 }
 
-export function removeFavorite(cityId) {
+export function removeFavorite(cityName) {
   return {
     type: REMOVE_FAVORITE,
-    payload: cityId
-  }
-}
-
-export function addCityForecast(city) {
-  return {
-    type: ADD_CITY_FORECAST,
-    payload: city
+    payload: cityName
   }
 }

@@ -1,4 +1,4 @@
-import { API_URL, FETCH_KEY_PATH, UPCOMING_FORECAST } from "./constants";
+import { API_URL, FETCH_KEY_PATH, UPCOMING_FORECAST } from "../constants";
 
 export const fetchCityKey = (params = {}) => {
   const paramsWithKey = {...params, apikey: process.env.REACT_APP_API_KEY}

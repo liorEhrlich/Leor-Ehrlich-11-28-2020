@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 import DayCard from "./DayCard"
 
-const DailyForecasts = ({dailyForecasts}) => (<Wrapper>
+const DailyForecasts = ({dailyForecasts = []}) => (<Wrapper>
     {dailyForecasts.map((forecast, index) => (
       <DayCard key={`forecast-${index}`} forecast={forecast}/>)
     )}

@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
+
 import CityOverview from "./CityOverview"
 
 const mapStateToProps = (state) => {
   return {
-    city: state.selectedCity
+    cityName: state.selectedCityName,
   }
 }
 

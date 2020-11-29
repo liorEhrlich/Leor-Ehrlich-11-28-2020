@@ -1,9 +1,8 @@
-import { ADD_CITY_FORECAST, ADD_FAVORITE, REMOVE_FAVORITE } from "./actionTypes"
+import { ADD_FAVORITE, REMOVE_FAVORITE } from "./actionTypes"
 
 const initialState = {
-  favoriteCitiesIds : [],
-  citiesForecast : {},
-  selectedCityId : ''
+  favoriteCities : [],
+  selectedCityName : 'Tel Aviv',
 }
 
 export default function appReducer(state = initialState, action) {
@@ -11,21 +10,13 @@ export default function appReducer(state = initialState, action) {
     case ADD_FAVORITE: {
       return {
         ...state,
-        favoriteCitiesIds: [...state.favoriteCitiesIds, action.payload.cityId]
+        favoriteCities: [...state.favoriteCities, action.payload]
       }
     };
     case REMOVE_FAVORITE: {
       return {
         ...state,
-        favoriteCitiesIds: state.favoriteCitiesIds.filter(cityId => cityId !== action.payload.cityId)
-      }
-    };
-    case ADD_CITY_FORECAST: {
-      return {
-        ...state,
-        citiesForecast: {...state.citiesForecast, 
-          [action.payload.cityId]: action.payload.upcomingForecast
-        }
+        favoriteCities: state.favoriteCities.filter(cityName => cityName !== action.payload)
       }
     };
     default:
