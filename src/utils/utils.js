@@ -21,3 +21,9 @@ export const validateQuery = (value) => {
 
   return regex.test(value)
 }
+
+export const ferenheitToCelsius = (temperature) => {
+  const celsius = Math.round((parseInt(temperature) - 32) * 5/9) ;
+  
+  return celsius
+}

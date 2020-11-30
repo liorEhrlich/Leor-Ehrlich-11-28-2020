@@ -1,13 +1,16 @@
 import styled from "styled-components";
-import Button from "../common/Button";
+import Button from "../../common/Button";
+import Toggle from "../../common/Toggle";
 
-import Logo from "./Logo";
+import Logo from "../Logo";
 
-const Header = ({ onSetIsHomeSelected }) => (
+const Header = ({ onSetIsHomeSelected, isFerenheit, setIsFerenheit }) => (
   <Wrapper>
     <Logo />
 
     <div>
+      <Toggle onLabel='°F' offLabel='°C' onToggle={setIsFerenheit} isOn={isFerenheit} />
+
       <Button onClick={onSetIsHomeSelected}>Home</Button>
 
       <Button onClick={() => onSetIsHomeSelected(false)}>Favorites</Button>

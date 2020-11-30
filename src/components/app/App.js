@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import FavoritesContainer from "../favorites/favoritesComponent/FavoritesContainer";
 import Home from "../home/Home";
-import Header from "../layout/Header"
+import HeaderContainer from "../layout/header/HeaderContainer"
 
 const App = ({ isHomeViewShown, setIsHomeViewShown}) => (<div>
-    <Header onSetIsHomeSelected={setIsHomeViewShown}/>
+    <HeaderContainer onSetIsHomeSelected={setIsHomeViewShown}/>
 
       {isHomeViewShown ?
       <Home /> :

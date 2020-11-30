@@ -1,10 +1,11 @@
-import { ADD_CITY_WEATHER, ADD_FAVORITE, REMOVE_FAVORITE, SET_IS_HOME_VIEW_SHOWN, UPDATE_SELECTED_CITY } from "./actions/actionTypes"
+import { ADD_CITY_WEATHER, ADD_FAVORITE, REMOVE_FAVORITE, SET_IS_FERENHEIT, SET_IS_HOME_VIEW_SHOWN, UPDATE_SELECTED_CITY } from "./actions/actionTypes"
 
 const initialState = {
   favoriteCities : [],
   selectedCityName : 'Tel Aviv',
   citiesWeather: {},
   isHomeViewShown: true,
+  isFerenheit: true
 }
 
 export default function appReducer(state = initialState, action) {
@@ -37,6 +38,12 @@ export default function appReducer(state = initialState, action) {
       return {
         ...state,
         isHomeViewShown: action.payload
+      }
+    }
+    case SET_IS_FERENHEIT: {
+      return {
+        ...state,
+        isFerenheit: action.payload
       }
     }
     default:

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import WeatherCard from "../../common/WeatherCard";
+import WeatherCardContainer from "../../common/weatherCard/WeatherCardContainer";
 
 const Favorites = ({ citiesWeather, updateCity, setIsHomeViewShown }) => {
   const onCityClick = (cityName) => {
@@ -10,12 +10,15 @@ const Favorites = ({ citiesWeather, updateCity, setIsHomeViewShown }) => {
 
   return (
   <Wrapper>
+    {!Object.keys(citiesWeather).length &&
+      <NoFavoritesMessage>No favorites yet. Feel free to add them from the home view.</NoFavoritesMessage>
+    }
     {Object.keys(citiesWeather).map(cityName => {
       const currentDayWeather = citiesWeather[cityName][0];
 
       return (
         <CardWrapper onClick={() => onCityClick(cityName)} key={`favorite-${cityName}`}>
-          <WeatherCard
+          <WeatherCardContainer
             title={cityName}
             desc={currentDayWeather.desc}
             minTemperature={currentDayWeather.minTemperature}
@@ -40,4 +43,9 @@ const CardWrapper = styled.div`
   :hover {
     cursor: pointer;
   }
+`
+
+const NoFavoritesMessage = styled.p`
+  margin-left: 20px;
+  font-size: 18px;
 `

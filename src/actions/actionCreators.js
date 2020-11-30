@@ -1,4 +1,4 @@
-import { ADD_CITY_WEATHER, ADD_FAVORITE, REMOVE_FAVORITE, SET_IS_HOME_VIEW_SHOWN, UPDATE_SELECTED_CITY } from "./actionTypes";
+import { ADD_CITY_WEATHER, ADD_FAVORITE, REMOVE_FAVORITE, SET_IS_HOME_VIEW_SHOWN, UPDATE_SELECTED_CITY, SET_IS_FERENHEIT } from "./actionTypes";
 
 export function addFavorite(cityName) {
   return {
@@ -32,5 +32,12 @@ export function setIsHomeViewShown(isShown) {
   return {
     type: SET_IS_HOME_VIEW_SHOWN,
     payload: isShown
+  }
+}
+
+export function setIsFerenheit(isFerenheit) {
+  return {
+    type: SET_IS_FERENHEIT,
+    payload: isFerenheit
   }
 }

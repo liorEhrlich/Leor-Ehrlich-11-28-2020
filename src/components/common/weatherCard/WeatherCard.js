@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
-const WeatherCard = ({ title, desc, minTemperature, maxTemperature }) => (
+import { ferenheitToCelsius } from "../../../utils/utils";
+
+const WeatherCard = ({ title, desc, minTemperature, maxTemperature, isFerenheit }) => (
   <Wrapper>
     <Title>{title}</Title>
     <Desc>{desc}</Desc>
-    <Temperature>{`${minTemperature} - ${maxTemperature}`}</Temperature>
+    {
+      isFerenheit ?
+      <Temperature>{`${minTemperature}°F - ${maxTemperature}°F`}</Temperature>
+      :
+      <Temperature>{`${ferenheitToCelsius(minTemperature)}°C - ${ferenheitToCelsius(maxTemperature)}°C`}</Temperature>
+    }
   </Wrapper>
 );
 
