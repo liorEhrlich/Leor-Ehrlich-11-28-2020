@@ -9,7 +9,7 @@ const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
 
   useEffect(() => {
     const getCityForecast = async () => {
-    //   const params = { 
+   //   const params = { 
     //     q: cityName
     //    };
 

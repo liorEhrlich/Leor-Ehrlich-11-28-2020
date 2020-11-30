@@ -8,9 +8,9 @@ import { autocompleteFetchedData } from "../../../../constants";
 import SeachBarDropdown from "../SeachBarDropdown";
 
 const getCityForecast = async (query, onFetch) => {
-    const params = { 
-      q: query
-     };
+  //   const params = { 
+  //     q: query
+  //    };
 
   // const autocompleteResponse = await fetchAutocompleteSearch(params);
   // const autocompleteResponseJson = await autocompleteResponse.json();
@@ -40,7 +40,9 @@ const SearchBar = ({updateCity}) => {
 
     setQuery(value);
 
-    search(value, setResponse)
+    if(value){
+      search(value, setResponse)
+    }
   }
 
   useEffect(() => {
