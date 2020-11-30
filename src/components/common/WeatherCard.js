@@ -1,25 +1,20 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
-const DayCard = ({forecast}) =>  (
-  <Wrapper>
-    <Day>
-      {forecast.day}
-    </Day>
-
-    <Desc>
-      {forecast.desc}
-      </Desc>
-    <Temperature>{`${forecast.minTemperature} - ${forecast.maxTemperature}`}</Temperature>
-  </Wrapper>
+const WeatherCard = ({title, desc, minTemperature, maxTemperature}) => (<Wrapper>
+  <Title>{title}</Title>
+  <Desc>{desc}</Desc>
+  <Temperature>{`${minTemperature} - ${maxTemperature}`}</Temperature>
+</Wrapper>
 )
 
-export default DayCard
+export default WeatherCard
 
 const Wrapper = styled.div`
   display: inline-block;
+  text-align: center;
   padding: 10px;
   background-color: ${props => props.theme.colors.primaryBackground};
-  margin: 0 10px;
+  margin: 20px;
   border-radius: 2px;
   border: 4px solid ${props => props.theme.colors.primaryContrast};
   height: 120px;
@@ -27,7 +22,7 @@ const Wrapper = styled.div`
   font-weight: bold;
 `
 
-const Day = styled.div`
+const Title = styled.div`
   word-break: break-word;
   font-size: 18px;
   color: ${props => props.theme.colors.tertiary};
