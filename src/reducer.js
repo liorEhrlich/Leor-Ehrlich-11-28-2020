@@ -1,4 +1,4 @@
-import { ADD_CITY_WEATHER, ADD_FAVORITE, REMOVE_FAVORITE } from "./actions/actionTypes"
+import { ADD_CITY_WEATHER, ADD_FAVORITE, REMOVE_FAVORITE, UPDATE_SELECTED_CITY } from "./actions/actionTypes"
 
 const initialState = {
   favoriteCities : [],
@@ -26,6 +26,12 @@ export default function appReducer(state = initialState, action) {
         citiesWeather: {...state.citiesWeather, ...action.payload}
       }
     };
+    case UPDATE_SELECTED_CITY: {
+      return {
+        ...state,
+        selectedCityName: action.payload
+      }
+    }
     default:
       return state
   }

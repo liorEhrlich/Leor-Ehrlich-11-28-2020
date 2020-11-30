@@ -11,3 +11,7 @@ export const normalizeUpcomingForecast = (fetchedForecast) => (
     }
   })
 )
+
+export const convertAutocompleteToCities = (fetchedAutocomplete) => (
+  fetchedAutocomplete.map(city => `${city.LocalizedName}, ${city.Country.LocalizedName}`)
+)

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { ReactComponent as FavoriteIcon } from '../../assets/heart.svg';
 
 const Favorite = ({isFavorite, onClick}) => {

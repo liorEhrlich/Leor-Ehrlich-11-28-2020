@@ -28,12 +28,14 @@ const Wrapper = styled.div`
 `
 
 const Day = styled.div`
+  word-break: break-word;
   font-size: 18px;
   color: ${props => props.theme.colors.tertiary};
   margin-top: 10px;
 `
 
 const Desc = styled.div`
+  word-break: break-word;
   font-size: 16px;
   color: ${props => props.theme.colors.secondary};
   margin-top: 10px;

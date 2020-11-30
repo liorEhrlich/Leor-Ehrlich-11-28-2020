@@ -4,6 +4,8 @@ export const FETCH_KEY_PATH = "locations/v1/search"
 
 export const UPCOMING_FORECAST = "forecasts/v1/daily/5day/"
 
+export const AUTOCOMPLETE_SEARCH_PATH = "locations/v1/cities/autocomplete"
+
 export const fetchedDailyForecasts = [
   {
     "Date": "2020-11-28T07:00:00+02:00",
@@ -163,3 +165,5 @@ export const fetchedDailyForecasts = [
     "Link": "http://www.accuweather.com/en/il/tel-aviv/215854/daily-weather-forecast/215854?day=5&lang=en-us"
   }
 ]
+
+export const autocompleteFetchedData = ["New Territories, Hong Kong", "New York, United States", "New Delhi, India", "New Taipei City, Taiwan", "Newcastle, South Africa", "Newcastle, Australia", "New Cairo, Egypt", "New Orleans, United States", "Newark, United States", "Newcastle upon Tyne, United Kingdom"]

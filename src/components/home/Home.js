@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-import SearchBar from "../common/SearchBar";
+import SearchBarContainer from "../common/search/searchBar/SearchBarContainer";
 import CityOverviewContainer from "./cityOverview/CityOverviewContainer";
 
 
 const Home = () => (
   <Wrapper>
-    <SearchBar />
+    <SearchBarContainer />
 
     <CityOverviewContainer/>
   </Wrapper>)
