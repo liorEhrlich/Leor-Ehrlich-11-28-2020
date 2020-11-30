@@ -59,7 +59,7 @@ const SearchBar = ({ updateCity, onError }) => {
 
       updateCity(selectedCity);
     }
-  }, [selectedCity]);
+  }, [selectedCity, updateCity]);
   return (
     <Wrapper>
       <Input

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components';
 
-import App from './App';
+import AppContainer from './components/app/AppContainer';
 import store from './store';
 import reportWebVitals from './reportWebVitals';
 import theme from './theme';
@@ -14,7 +14,7 @@ ReactDOM.render(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <App />
+        <AppContainer />
       </ThemeProvider>
     </Provider>
   </React.StrictMode>,

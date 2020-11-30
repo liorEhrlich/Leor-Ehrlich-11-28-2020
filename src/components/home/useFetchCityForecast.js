@@ -39,7 +39,7 @@ const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
     };
 
     getCityForecast();
-  }, [cityName]);
+  }, [cityName, addCityWeather]);
 
   return cityForecast;
 };

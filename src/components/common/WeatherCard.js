@@ -15,7 +15,6 @@ const Wrapper = styled.div`
   text-align: center;
   padding: 10px;
   background-color: ${props => props.theme.colors.primaryBackground};
-  margin: 20px;
   border-radius: 2px;
   border: 4px solid ${props => props.theme.colors.primaryContrast};
   height: 170px;
