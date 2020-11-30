@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   margin: 20px;
   border-radius: 2px;
   border: 4px solid ${props => props.theme.colors.primaryContrast};
-  height: 120px;
+  height: 170px;
   width: 110px;
   font-weight: bold;
 `

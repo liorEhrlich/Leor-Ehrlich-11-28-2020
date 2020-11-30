@@ -3,11 +3,13 @@ import debounce from 'lodash/debounce';
 import styled from "styled-components";
 
 import { fetchAutocompleteSearch } from "../../../../utils/apiUtils";
-import { convertAutocompleteToCities } from "../../../../utils/utils";
+import { convertAutocompleteToCities, validateQuery } from "../../../../utils/utils";
 import { autocompleteFetchedData } from "../../../../constants";
 import SeachBarDropdown from "../SeachBarDropdown";
 
 const getCityForecast = async (query, onFetch) => {
+  
+
   //   const params = { 
   //     q: query
   //    };
@@ -26,7 +28,7 @@ const getCityForecast = async (query, onFetch) => {
 
 const search = debounce(getCityForecast, 500);
 
-const SearchBar = ({updateCity}) => {
+const SearchBar = ({updateCity, onError}) => {
   const [query, setQuery] = useState('');
   const [response, setResponse] = useState([]);
   const [selectedCity, setSelectedCity] = useState('');
@@ -40,7 +42,12 @@ const SearchBar = ({updateCity}) => {
 
     setQuery(value);
 
-    if(value){
+    if(!validateQuery(value) && value){
+      setQuery('')
+      
+      onError(true)
+    }
+    else if(value){
       search(value, setResponse)
     }
   }
@@ -54,7 +61,7 @@ const SearchBar = ({updateCity}) => {
   }, [selectedCity])
   return (
     <Wrapper>
-      <Input value={query} placeholder="City" onChange={onChange} />
+      <Input value={query} placeholder="City" pattern="[a-z][A-Z]" onChange={onChange} />
       {
         !selectedCity && 
         <SeachBarDropdown results={response} onCitySelect={setSelectedCity}/>

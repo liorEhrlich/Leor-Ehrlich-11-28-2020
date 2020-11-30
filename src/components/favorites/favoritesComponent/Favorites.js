@@ -1,7 +1,9 @@
+import styled from 'styled-components'
+
 import WeatherCard from "../../common/WeatherCard"
 
 const Favorites = ({ citiesWeather }) => (
-<div>{Object.keys(citiesWeather).map(cityName => {
+<Wrapper>{Object.keys(citiesWeather).map(cityName => {
   const currentDayWeather = citiesWeather[cityName][0]
   
   return <WeatherCard title={cityName} 
@@ -9,7 +11,12 @@ const Favorites = ({ citiesWeather }) => (
   minTemperature={currentDayWeather.minTemperature}
   maxTemperature={currentDayWeather.maxTemperature}
   />
-})}</div>
+})}</Wrapper>
 )
 
 export default Favorites
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
