@@ -1,18 +1,25 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-import WeatherCard from "../common/WeatherCard"
+import WeatherCard from "../common/WeatherCard";
 
-const DailyForecasts = ({dailyForecasts = []}) => (<Wrapper>
+const DailyForecasts = ({ dailyForecasts = [] }) => (
+  <Wrapper>
     {dailyForecasts.map((forecast, index) => (
-      <WeatherCard key={`forecast-${index}`} title={forecast.day} desc={forecast.desc} minTemperature={forecast.minTemperature} maxTemperature={forecast.maxTemperature}/>)
-    )}
-  </Wrapper>)
+      <WeatherCard
+        key={`forecast-${index}`}
+        title={forecast.day}
+        desc={forecast.desc}
+        minTemperature={forecast.minTemperature}
+        maxTemperature={forecast.maxTemperature}
+      />
+    ))}
+  </Wrapper>
+);
 
-
-export default DailyForecasts
+export default DailyForecasts;
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-`
+`;

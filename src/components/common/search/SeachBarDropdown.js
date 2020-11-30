@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
-const SeachBarDropdown = ({results, onCitySelect}) => {
-  if(!results.length){
-    return null
+const SeachBarDropdown = ({ results, onCitySelect }) => {
+  if (!results.length) {
+    return null;
   }
-  return (<Cities>
-    {results.map(city => <City key={city} onClick={e => onCitySelect(e.target.innerHTML)}>{city}</City>)}
-  </Cities>)
-}
+  return (
+    <Cities>
+      {results.map(city => (
+        <City key={city} onClick={e => onCitySelect(e.target.innerHTML)}>
+          {city}
+        </City>
+      ))}
+    </Cities>
+  );
+};
 
-export default SeachBarDropdown
+export default SeachBarDropdown;
 
 const Cities = styled.ul`
   position: absolute;
@@ -21,7 +27,7 @@ const Cities = styled.ul`
   padding: 10px;
   border: 2px solid ${props => props.theme.colors.primaryContrast};
   border-radius: 2px;
-`
+`;
 
 const City = styled.li`
   padding: 5px;
@@ -35,4 +41,4 @@ const City = styled.li`
     cursor: pointer;
     font-weight: bold;
   }
-`
+`;

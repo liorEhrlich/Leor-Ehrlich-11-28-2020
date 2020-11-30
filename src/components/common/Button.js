@@ -14,6 +14,6 @@ const Button = styled.button`
     cursor: pointer;
     opacity: 0.8;
   }
-`
+`;
 
-export default Button
+export default Button;

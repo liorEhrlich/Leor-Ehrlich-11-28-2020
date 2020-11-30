@@ -1,12 +1,12 @@
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 
-import { updateSelectedCity } from "../../../../actions/actionCreators"
-import SearchBar from "./SearchBar"
+import { updateSelectedCity } from "../../../../actions/actionCreators";
+import SearchBar from "./SearchBar";
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    updateCity: (city) => dispatch(updateSelectedCity(city)),
-  }
-}
+    updateCity: city => dispatch(updateSelectedCity(city))
+  };
+};
 
-export default connect(null, mapDispatchToProps)(SearchBar)
+export default connect(null, mapDispatchToProps)(SearchBar);

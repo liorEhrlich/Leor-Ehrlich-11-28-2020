@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
-import { createPortal } from 'react-dom';
-import styled from 'styled-components';
+import { useEffect } from "react";
+import { createPortal } from "react-dom";
+import styled from "styled-components";
 
-const modalRoot = document.getElementById( 'modal' );
+const modalRoot = document.getElementById("modal");
 
 const Modal = ({ isOpen, children }) => {
   const rootElement = document.createElement("div");
@@ -15,21 +15,17 @@ const Modal = ({ isOpen, children }) => {
     };
   }, [rootElement]);
 
-  if(!isOpen){
-    return false
+  if (!isOpen) {
+    return false;
   }
 
-  return (
-    createPortal(
-      <ModalBackdrop>
-        <ModalContainer>
-          {children}
-        </ModalContainer>
-      </ModalBackdrop>,
-      rootElement
-    )
+  return createPortal(
+    <ModalBackdrop>
+      <ModalContainer>{children}</ModalContainer>
+    </ModalBackdrop>,
+    rootElement
   );
-}
+};
 
 const ModalBackdrop = styled.div`
   position: absolute;
@@ -40,8 +36,8 @@ const ModalBackdrop = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0,0,0,0.6);
-`
+  background-color: rgba(0, 0, 0, 0.6);
+`;
 
 const ModalContainer = styled.div`
   width: 300px;
@@ -53,6 +49,6 @@ const ModalContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   text-align: center;
-`
+`;
 
 export default Modal;

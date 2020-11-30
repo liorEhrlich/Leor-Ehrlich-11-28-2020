@@ -1,9 +1,17 @@
-import Favorite from "../../common/Favorite"
+import Favorite from "../../common/Favorite";
 
-const ToggleFavorite = ({cityName, isFavorite, addFavorite, removeFavorite}) => (
-  <Favorite isFavorite={isFavorite} 
-  onClick={() => isFavorite ? removeFavorite(cityName) : addFavorite(cityName)}
-   />
-)
+const ToggleFavorite = ({
+  cityName,
+  isFavorite,
+  addFavorite,
+  removeFavorite
+}) => (
+  <Favorite
+    isFavorite={isFavorite}
+    onClick={() =>
+      isFavorite ? removeFavorite(cityName) : addFavorite(cityName)
+    }
+  />
+);
 
-export default ToggleFavorite
+export default ToggleFavorite;

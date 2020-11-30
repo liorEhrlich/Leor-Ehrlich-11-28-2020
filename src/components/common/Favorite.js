@@ -1,13 +1,14 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { ReactComponent as FavoriteIcon } from '../../assets/heart.svg';
+import { ReactComponent as FavoriteIcon } from "../../assets/heart.svg";
 
-const Favorite = ({isFavorite, onClick}) => {
+const Favorite = ({ isFavorite, onClick }) => {
   return (
-  <Wrapper isFavorite={isFavorite} onClick={onClick}>
-    <StyledFavoriteIcon />
-  </Wrapper>
-)}
+    <Wrapper isFavorite={isFavorite} onClick={onClick}>
+      <StyledFavoriteIcon />
+    </Wrapper>
+  );
+};
 
 const StyledFavoriteIcon = styled(FavoriteIcon)`
   width: 35px;
@@ -17,16 +18,22 @@ const StyledFavoriteIcon = styled(FavoriteIcon)`
   :hover {
     cursor: pointer;
   }
-`
+`;
 
 const Wrapper = styled.div`
   > ${StyledFavoriteIcon} {
-    fill: ${props => props.isFavorite ? props.theme.colors.favorite : props.theme.colors.secondaryBackground};
+    fill: ${props =>
+      props.isFavorite
+        ? props.theme.colors.favorite
+        : props.theme.colors.secondaryBackground};
 
     :hover {
-      fill: ${props => props.isFavorite ? props.theme.colors.secondaryBackground : props.theme.colors.favorite};
+      fill: ${props =>
+        props.isFavorite
+          ? props.theme.colors.secondaryBackground
+          : props.theme.colors.favorite};
     }
   }
-`
+`;
 
-export default Favorite
+export default Favorite;

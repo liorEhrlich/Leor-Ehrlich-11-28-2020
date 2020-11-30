@@ -1,19 +1,19 @@
-import { connect } from 'react-redux'
-import { addCityWeather } from '../../../actions/actionCreators'
+import { connect } from "react-redux";
+import { addCityWeather } from "../../../actions/actionCreators";
 
-import CityOverview from "./CityOverview"
+import CityOverview from "./CityOverview";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     cityName: state.selectedCityName,
     cityWeather: state.citiesWeather[state.selectedCityName]
-  }
-}
+  };
+};
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    addCityWeather: (cityWeather) => dispatch(addCityWeather(cityWeather)),
-  }
-}
+    addCityWeather: cityWeather => dispatch(addCityWeather(cityWeather))
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CityOverview)
+export default connect(mapStateToProps, mapDispatchToProps)(CityOverview);
