@@ -1,4 +1,4 @@
-export const API_URL = "http://dataservice.accuweather.com/"
+export const API_URL = "https://dataservice.accuweather.com/"
 
 export const FETCH_KEY_PATH = "locations/v1/search"
 
