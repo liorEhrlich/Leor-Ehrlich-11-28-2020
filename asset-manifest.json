@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Leor-Ehrlich-11-28-2020/static/js/main.411e3217.chunk.js",
-    "main.js.map": "/Leor-Ehrlich-11-28-2020/static/js/main.411e3217.chunk.js.map",
+    "main.js": "/Leor-Ehrlich-11-28-2020/static/js/main.f1632f50.chunk.js",
+    "main.js.map": "/Leor-Ehrlich-11-28-2020/static/js/main.f1632f50.chunk.js.map",
     "runtime-main.js": "/Leor-Ehrlich-11-28-2020/static/js/runtime-main.014f25e3.js",
     "runtime-main.js.map": "/Leor-Ehrlich-11-28-2020/static/js/runtime-main.014f25e3.js.map",
     "static/js/2.9ee8d73e.chunk.js": "/Leor-Ehrlich-11-28-2020/static/js/2.9ee8d73e.chunk.js",
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.014f25e3.js",
     "static/js/2.9ee8d73e.chunk.js",
-    "static/js/main.411e3217.chunk.js"
+    "static/js/main.f1632f50.chunk.js"
   ]
 }
