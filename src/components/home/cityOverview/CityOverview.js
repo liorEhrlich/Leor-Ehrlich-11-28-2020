@@ -19,7 +19,7 @@ const CityOverview = ({ cityName, cityWeather, addCityWeather }) => {
         <ToggleFavoriteContainer />
       </TopSection>
 
-      {cityForecast && (
+      {cityForecast.length && (
         <>
           <WeatherDescription>{cityForecast[0].desc}</WeatherDescription>
 

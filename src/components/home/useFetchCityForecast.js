@@ -6,39 +6,40 @@ import { convertUpcomingForecast } from "../../utils/utils";
 
 const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
   const [cityForecast, setCityForecast] = useState(cityWeather);
-
+console.log(cityForecast);
   useEffect(() => {
     const getCityForecast = async () => {
-      //   const params = {
-      //     q: cityName
-      //    };
+        const params = {
+          q: cityName
+         };
 
-      // const cityKeyResponse = await fetchCityKey(params);
-      // const cityKeyJson = await cityKeyResponse.json();
+      const cityKeyResponse = await fetchCityKey(params);
+      const cityKeyJson = await cityKeyResponse.json();
 
-      // const [{Key: cityKey}] = cityKeyJson
+      const [{Key: cityKey}] = cityKeyJson
 
-      // const upcomingForecastResponse = await fetchUpcomingForecast(cityKey);
-      // const upcomingForecastJson = await upcomingForecastResponse.json();
+      const upcomingForecastResponse = await fetchUpcomingForecast(cityKey);
+      const upcomingForecastJson = await upcomingForecastResponse.json();
 
-      // const normalizedUpcomingForecast = convertUpcomingForecast(upcomingForecastJson.DailyForecasts)
+      const normalizedUpcomingForecast = convertUpcomingForecast(upcomingForecastJson.DailyForecasts)
 
-      // setCityForecast(normalizedUpcomingForecast)
+      setCityForecast(normalizedUpcomingForecast)
 
-      // const cityWeather = {[cityName] : normalizedUpcomingForecast}
+      const cityWeather = {[cityName] : normalizedUpcomingForecast}
 
-      // addCityWeather(cityWeather)
+      addCityWeather(cityWeather)
 
-      const forecsat = convertUpcomingForecast(fetchedDailyForecasts);
+      // const forecsat = convertUpcomingForecast(fetchedDailyForecasts);
 
-      setCityForecast(forecsat);
+      // setCityForecast(forecsat);
 
-      const cityWeather = { [cityName]: forecsat };
+      // const cityWeather = { [cityName]: forecsat };
 
-      addCityWeather(cityWeather);
+      // addCityWeather(cityWeather);
     };
-
-    getCityForecast();
+    if(!cityWeather.length){
+      getCityForecast();
+    }
   }, [cityName, addCityWeather]);
 
   return cityForecast;

@@ -6,7 +6,7 @@ import CityOverview from "./CityOverview";
 const mapStateToProps = state => {
   return {
     cityName: state.selectedCityName,
-    cityWeather: state.citiesWeather[state.selectedCityName]
+    cityWeather: state.citiesWeather[state.selectedCityName] || []
   };
 };
 

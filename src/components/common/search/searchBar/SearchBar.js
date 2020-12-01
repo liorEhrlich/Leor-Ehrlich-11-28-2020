@@ -11,20 +11,20 @@ import { autocompleteFetchedData } from "../../../../constants";
 import SeachBarDropdown from "../SeachBarDropdown";
 
 const getCityForecast = async (query, onFetch) => {
-  //   const params = {
-  //     q: query
-  //    };
+    const params = {
+      q: query
+     };
 
-  // const autocompleteResponse = await fetchAutocompleteSearch(params);
-  // const autocompleteResponseJson = await autocompleteResponse.json();
+  const autocompleteResponse = await fetchAutocompleteSearch(params);
+  const autocompleteResponseJson = await autocompleteResponse.json();
 
-  // const autocompleteCities = convertAutocompleteToCities(autocompleteResponseJson)
+  const autocompleteCities = convertAutocompleteToCities(autocompleteResponseJson)
 
-  // onFetch(autocompleteCities)
+  onFetch(autocompleteCities)
 
-  const autocompleteResponseJson = autocompleteFetchedData;
+  // const autocompleteResponseJson = autocompleteFetchedData;
 
-  onFetch(autocompleteResponseJson);
+  // onFetch(autocompleteResponseJson);
 };
 
 const search = debounce(getCityForecast, 500);
