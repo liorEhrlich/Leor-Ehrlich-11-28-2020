@@ -16,7 +16,7 @@ export const convertAutocompleteToCities = (fetchedAutocomplete) => (
   fetchedAutocomplete.map(city => `${city.LocalizedName}, ${city.Country.LocalizedName}`)
 )
 
-export const validateQuery = (value) => {
+export const validateEnglishQuery = (value) => {
   const regex = RegExp('[a-zA-Z-]');
 
   return regex.test(value)

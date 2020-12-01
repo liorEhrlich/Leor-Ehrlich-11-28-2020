@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { fetchAutocompleteSearch } from "../../../../utils/apiUtils";
 import {
   convertAutocompleteToCities,
-  validateQuery
+  validateEnglishQuery
 } from "../../../../utils/utils";
 import { autocompleteFetchedData } from "../../../../constants";
 import SeachBarDropdown from "../SeachBarDropdown";
@@ -44,7 +44,7 @@ const SearchBar = ({ updateCity, onError }) => {
 
     setQuery(value);
 
-    if (!validateQuery(value) && value) {
+    if (!validateEnglishQuery(value) && value) {
       setQuery("");
 
       onError(true);
