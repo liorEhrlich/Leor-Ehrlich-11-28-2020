@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import FavoritesContainer from "../favorites/favoritesComponent/FavoritesContainer";
 import Home from "../home/Home";
 import HeaderContainer from "../layout/header/HeaderContainer"
