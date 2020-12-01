@@ -20,11 +20,11 @@ const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
       const upcomingForecastResponse = await fetchUpcomingForecast(cityKey);
       const upcomingForecastJson = await upcomingForecastResponse.json();
 
-      const normalizedUpcomingForecast = convertUpcomingForecast(upcomingForecastJson.DailyForecasts)
+      const convertedUpcomingForecast = convertUpcomingForecast(upcomingForecastJson.DailyForecasts)
 
-      setFetchedCityWeather(normalizedUpcomingForecast)
+      setFetchedCityWeather(convertedUpcomingForecast)
 
-      const cityWeather = {[cityName] : normalizedUpcomingForecast}
+      const cityWeather = {[cityName] : convertedUpcomingForecast}
 
       addCityWeather(cityWeather)
     };
