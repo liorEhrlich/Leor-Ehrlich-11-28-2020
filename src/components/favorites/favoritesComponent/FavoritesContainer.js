@@ -2,7 +2,10 @@ import { connect } from "react-redux";
 import pick from "lodash/pick";
 
 import Favorites from "./Favorites";
-import {updateSelectedCity, setIsHomeViewShown} from "../../../actions/actionCreators"
+import {
+  updateSelectedCity,
+  setIsHomeViewShown
+} from "../../../actions/actionCreators";
 
 const mapStateToProps = state => {
   const favoriteCitiesWeather = pick(state.citiesWeather, state.favoriteCities);

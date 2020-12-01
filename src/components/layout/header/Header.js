@@ -9,7 +9,12 @@ const Header = ({ onSetIsHomeSelected, isFerenheit, setIsFerenheit }) => (
     <Logo />
 
     <div>
-      <Toggle onLabel='°F' offLabel='°C' onToggle={setIsFerenheit} isOn={isFerenheit} />
+      <Toggle
+        onLabel="°F"
+        offLabel="°C"
+        onToggle={setIsFerenheit}
+        isOn={isFerenheit}
+      />
 
       <Button onClick={onSetIsHomeSelected}>Home</Button>
 

@@ -8,27 +8,29 @@ const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
 
   useEffect(() => {
     const getCityForecast = async () => {
-        const params = {
-          q: cityName
-         };
+      const params = {
+        q: cityName
+      };
 
       const cityKeyResponse = await fetchCityKey(params);
       const cityKeyJson = await cityKeyResponse.json();
 
-      const [{Key: cityKey}] = cityKeyJson
+      const [{ Key: cityKey }] = cityKeyJson;
 
       const upcomingForecastResponse = await fetchUpcomingForecast(cityKey);
       const upcomingForecastJson = await upcomingForecastResponse.json();
 
-      const convertedUpcomingForecast = convertUpcomingForecast(upcomingForecastJson.DailyForecasts)
+      const convertedUpcomingForecast = convertUpcomingForecast(
+        upcomingForecastJson.DailyForecasts
+      );
 
-      setFetchedCityWeather(convertedUpcomingForecast)
+      setFetchedCityWeather(convertedUpcomingForecast);
 
-      const cityWeather = {[cityName] : convertedUpcomingForecast}
+      const cityWeather = { [cityName]: convertedUpcomingForecast };
 
-      addCityWeather(cityWeather)
+      addCityWeather(cityWeather);
     };
-    if(!cityWeather.length){
+    if (!cityWeather.length) {
       getCityForecast();
     }
   }, [cityName, addCityWeather, cityWeather.length]);

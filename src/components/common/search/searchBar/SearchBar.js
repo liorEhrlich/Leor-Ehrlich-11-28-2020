@@ -10,19 +10,21 @@ import {
 import SeachBarDropdown from "../SeachBarDropdown";
 
 const getCityForecast = async (query, onFetch) => {
-  if(query.length === 1){
-    return
+  if (query.length === 1) {
+    return;
   }
-    const params = {
-      q: query
-     };
+  const params = {
+    q: query
+  };
 
   const autocompleteResponse = await fetchAutocompleteSearch(params);
   const autocompleteResponseJson = await autocompleteResponse.json();
 
-  const autocompleteCities = convertAutocompleteToCities(autocompleteResponseJson)
+  const autocompleteCities = convertAutocompleteToCities(
+    autocompleteResponseJson
+  );
 
-  onFetch(autocompleteCities)
+  onFetch(autocompleteCities);
 };
 
 const search = debounce(getCityForecast, 500);
@@ -32,11 +34,13 @@ const SearchBar = ({ updateCity, onError }) => {
   const [response, setResponse] = useState([]);
   const [selectedCity, setSelectedCity] = useState("");
 
-  const onChange = (event) => {
+  const onChange = event => {
     setSelectedCity("");
     setResponse([]);
-    
-    const { target: {value}} = event
+
+    const {
+      target: { value }
+    } = event;
 
     setQuery(value);
 

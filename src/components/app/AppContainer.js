@@ -4,7 +4,7 @@ import App from "./App";
 
 const mapStateToProps = state => {
   return {
-    isHomeViewShown: state.isHomeViewShown,
+    isHomeViewShown: state.isHomeViewShown
   };
 };
 

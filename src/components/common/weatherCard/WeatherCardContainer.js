@@ -4,8 +4,8 @@ import WeatherCard from "./WeatherCard";
 
 const mapStateToProps = state => {
   return {
-    isFerenheit: state.isFerenheit,
+    isFerenheit: state.isFerenheit
   };
 };
 
-export default connect(mapStateToProps)(WeatherCard)
+export default connect(mapStateToProps)(WeatherCard);

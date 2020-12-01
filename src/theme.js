@@ -8,6 +8,6 @@ const theme = {
     tertiary: "#D99441",
     favorite: "#F5041F"
   }
-}
+};
 
-export default theme
+export default theme;
