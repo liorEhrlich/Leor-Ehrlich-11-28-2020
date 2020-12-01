@@ -1,6 +1,6 @@
 import moment from "moment"
 
-export const normalizeUpcomingForecast = (fetchedForecast) => (
+export const convertUpcomingForecast = (fetchedForecast) => (
   fetchedForecast.map(forecast => {
     return {
       date: forecast.Date,

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchedDailyForecasts } from "../../constants";
 
 import { fetchCityKey, fetchUpcomingForecast } from "../../utils/apiUtils";
-import { normalizeUpcomingForecast } from "../../utils/utils";
+import { convertUpcomingForecast } from "../../utils/utils";
 
 const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
   const [cityForecast, setCityForecast] = useState(cityWeather);
@@ -21,7 +21,7 @@ const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
       // const upcomingForecastResponse = await fetchUpcomingForecast(cityKey);
       // const upcomingForecastJson = await upcomingForecastResponse.json();
 
-      // const normalizedUpcomingForecast = normalizeUpcomingForecast(upcomingForecastJson.DailyForecasts)
+      // const normalizedUpcomingForecast = convertUpcomingForecast(upcomingForecastJson.DailyForecasts)
 
       // setCityForecast(normalizedUpcomingForecast)
 
@@ -29,7 +29,7 @@ const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
 
       // addCityWeather(cityWeather)
 
-      const forecsat = normalizeUpcomingForecast(fetchedDailyForecasts);
+      const forecsat = convertUpcomingForecast(fetchedDailyForecasts);
 
       setCityForecast(forecsat);
 
