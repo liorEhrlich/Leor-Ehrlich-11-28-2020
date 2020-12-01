@@ -7,7 +7,6 @@ import {
   convertAutocompleteToCities,
   validateEnglishQuery
 } from "../../../../utils/utils";
-import { autocompleteFetchedData } from "../../../../constants";
 import SeachBarDropdown from "../SeachBarDropdown";
 
 const getCityForecast = async (query, onFetch) => {
@@ -21,10 +20,6 @@ const getCityForecast = async (query, onFetch) => {
   const autocompleteCities = convertAutocompleteToCities(autocompleteResponseJson)
 
   onFetch(autocompleteCities)
-
-  // const autocompleteResponseJson = autocompleteFetchedData;
-
-  // onFetch(autocompleteResponseJson);
 };
 
 const search = debounce(getCityForecast, 500);
