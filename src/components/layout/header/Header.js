@@ -8,7 +8,7 @@ const Header = ({ onSetIsHomeSelected, isFerenheit, setIsFerenheit }) => (
   <Wrapper>
     <Logo />
 
-    <div>
+    <ButtonsWrapper>
       <Toggle
         onLabel="°F"
         offLabel="°C"
@@ -19,7 +19,7 @@ const Header = ({ onSetIsHomeSelected, isFerenheit, setIsFerenheit }) => (
       <Button onClick={onSetIsHomeSelected}>Home</Button>
 
       <Button onClick={() => onSetIsHomeSelected(false)}>Favorites</Button>
-    </div>
+    </ButtonsWrapper>
   </Wrapper>
 );
 
@@ -33,3 +33,8 @@ const Wrapper = styled.header`
   padding: 0 20px;
   background-color: ${props => props.theme.colors.secondaryBackground};
 `;
+
+const ButtonsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`

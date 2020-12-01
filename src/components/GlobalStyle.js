@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     background-color: ${props => props.theme.colors.primaryBackground};
+    word-break: break-word;
   }
 `;
 
