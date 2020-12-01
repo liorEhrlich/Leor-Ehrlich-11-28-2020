@@ -4,8 +4,8 @@ import { fetchCityKey, fetchUpcomingForecast } from "../../utils/apiUtils";
 import { convertUpcomingForecast } from "../../utils/utils";
 
 const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
-  const [cityForecast, setCityForecast] = useState(cityWeather);
-console.log(cityForecast);
+  const [fetchedCityWeather, setFetchedCityWeather] = useState(cityWeather);
+
   useEffect(() => {
     const getCityForecast = async () => {
         const params = {
@@ -22,7 +22,7 @@ console.log(cityForecast);
 
       const normalizedUpcomingForecast = convertUpcomingForecast(upcomingForecastJson.DailyForecasts)
 
-      setCityForecast(normalizedUpcomingForecast)
+      setFetchedCityWeather(normalizedUpcomingForecast)
 
       const cityWeather = {[cityName] : normalizedUpcomingForecast}
 
@@ -31,9 +31,9 @@ console.log(cityForecast);
     if(!cityWeather.length){
       getCityForecast();
     }
-  }, [cityName, addCityWeather]);
+  }, [cityName, addCityWeather, cityWeather.length]);
 
-  return cityForecast;
+  return fetchedCityWeather;
 };
 
 export default useFetchCityForecast;

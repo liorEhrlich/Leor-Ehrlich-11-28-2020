@@ -10,6 +10,9 @@ import {
 import SeachBarDropdown from "../SeachBarDropdown";
 
 const getCityForecast = async (query, onFetch) => {
+  if(query.length === 1){
+    return
+  }
     const params = {
       q: query
      };
@@ -29,13 +32,11 @@ const SearchBar = ({ updateCity, onError }) => {
   const [response, setResponse] = useState([]);
   const [selectedCity, setSelectedCity] = useState("");
 
-  const onChange = event => {
+  const onChange = (event) => {
     setSelectedCity("");
     setResponse([]);
-
-    const {
-      target: { value }
-    } = event;
+    
+    const { target: {value}} = event
 
     setQuery(value);
 
@@ -43,7 +44,7 @@ const SearchBar = ({ updateCity, onError }) => {
       setQuery("");
 
       onError(true);
-    } else if (value) {
+    } else if (value.length) {
       search(value, setResponse);
     }
   };
