@@ -5,6 +5,7 @@ import { convertUpcomingForecast } from "../../utils/utils";
 
 const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
   const [fetchedCityWeather, setFetchedCityWeather] = useState(cityWeather);
+  const [isError, setIsError] = useState(false)
 
   useEffect(() => {
     const getCityForecast = async () => {
@@ -12,7 +13,8 @@ const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
         q: cityName
       };
 
-      const cityKeyResponse = await fetchCityKey(params);
+      try {
+        const cityKeyResponse = await fetchCityKey(params);
       const cityKeyJson = await cityKeyResponse.json();
 
       const [{ Key: cityKey }] = cityKeyJson;
@@ -29,13 +31,18 @@ const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
       const cityWeather = { [cityName]: convertedUpcomingForecast };
 
       addCityWeather(cityWeather);
+      }
+      catch(error) {
+        setIsError(true)
+      }
+      
     };
     if (!cityWeather.length) {
       getCityForecast();
     }
   }, [cityName, addCityWeather, cityWeather.length]);
 
-  return fetchedCityWeather;
+  return [fetchedCityWeather, isError, setIsError];
 };
 
 export default useFetchCityForecast;

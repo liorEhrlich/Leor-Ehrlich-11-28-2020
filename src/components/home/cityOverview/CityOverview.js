@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
+import Button from "../../common/Button";
+import Modal from "../../common/Modal";
 import DailyForecasts from "../DailyForecasts";
 import ToggleFavoriteContainer from "../toggleFavorite/ToggleFavoriteContainer";
 import useFetchCityForecast from "../useFetchCityForecast";
 
 const CityOverview = ({ cityName, cityWeather, addCityWeather }) => {
-  const cityForecast = useFetchCityForecast(
+  const [cityForecast, isError, setIsError] = useFetchCityForecast(
     cityName,
     cityWeather,
     addCityWeather
@@ -19,13 +21,28 @@ const CityOverview = ({ cityName, cityWeather, addCityWeather }) => {
         <ToggleFavoriteContainer />
       </TopSection>
 
-      {cityForecast.length && (
+      {isError && (
+        <Modal isOpen={isError}>
+          <div>Sorry, the server is not responding.</div>
+          <Button onClick={() => setIsError(false)}>
+            I'll try again later
+          </Button>
+        </Modal>
+      )}
+
+      {cityForecast.length ? (
         <>
           <WeatherDescription>{cityForecast[0].desc}</WeatherDescription>
 
           <SubTitle>This week's forecast</SubTitle>
           <DailyForecasts dailyForecasts={cityForecast} />
         </>
+      ) : (
+        <div>
+          {isError
+            ? "The server is not responding. Please try again later"
+            : "Loading..."}
+        </div>
       )}
     </Wrapper>
   );
