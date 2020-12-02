@@ -39,6 +39,10 @@ const Wrapper = styled.header`
   height: 70px;
   padding: 0 20px;
   background-color: ${props => props.theme.colors.secondaryBackground};
+
+  @media ${props => props.theme.mobile}{
+    font-size: 10px;
+  }
 `;
 
 const ButtonsWrapper = styled.div`

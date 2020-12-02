@@ -87,4 +87,8 @@ const Input = styled.input`
   width: 185px;
   font-size: 18px;
   padding: 10px;
+
+  @media ${props => props.theme.mobile}{
+    font-size: 16px;
+  }
 `;

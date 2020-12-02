@@ -14,6 +14,10 @@ const Wrapper = styled.div``;
 
 const Image = styled.img`
   width: 45px;
+
+  @media ${props => props.theme.mobile}{
+    width: 35px;
+  }
 `;
 
 const Title = styled.h1`
@@ -21,4 +25,8 @@ const Title = styled.h1`
   margin: 0;
   color: ${props => props.theme.colors.primaryContrast};
   font-weight: bold;
+
+  @media ${props => props.theme.mobile}{
+    font-size: 10px;
+  }
 `;

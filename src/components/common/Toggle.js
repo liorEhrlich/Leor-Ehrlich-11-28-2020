@@ -28,4 +28,8 @@ const ToggleButton = styled.button`
   :hover {
     cursor: pointer;
   }
+
+  @media ${props => props.theme.mobile}{
+    font-size: 10px;
+  }
 `;

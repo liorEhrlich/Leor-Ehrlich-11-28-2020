@@ -70,6 +70,10 @@ const Name = styled.h2`
   background-color: ${props => props.theme.colors.secondary};
   padding: 5px;
   border-radius: 2px;
+
+  @media ${props => props.theme.mobile}{
+    font-size: 18px;
+  }
 `;
 
 const TopSection = styled.div`
@@ -81,10 +85,18 @@ const TopSection = styled.div`
 const WeatherDescription = styled.h3`
   font-size: 36px;
   color: ${props => props.theme.colors.primaryBackground};
+
+  @media ${props => props.theme.mobile}{
+    font-size: 20px;
+  }
 `;
 
 const SubTitle = styled.h4`
   margin-top: 55px;
   font-size: 24px;
   color: ${props => props.theme.colors.primaryBackground};
+
+  @media ${props => props.theme.mobile}{
+    font-size: 18px;
+  }
 `;

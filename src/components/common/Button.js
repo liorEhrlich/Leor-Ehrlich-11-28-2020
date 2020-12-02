@@ -14,6 +14,11 @@ const Button = styled.button`
     cursor: pointer;
     opacity: 0.8;
   }
+
+  @media ${props => props.theme.mobile}{
+    font-size: 10px;
+    word-break: normal;
+  }
 `;
 
 export default Button;

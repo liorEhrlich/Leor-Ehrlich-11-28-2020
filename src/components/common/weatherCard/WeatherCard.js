@@ -34,6 +34,12 @@ const Wrapper = styled.div`
   height: 170px;
   width: 110px;
   font-weight: bold;
+
+  @media ${props => props.theme.mobile}{
+    height: auto;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
 `;
 
 const Title = styled.div`
