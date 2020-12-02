@@ -42,7 +42,7 @@ const useFetchCityForecast = (cityName, cityWeather, addCityWeather) => {
     }
   }, [cityName, addCityWeather, cityWeather.length]);
 
-  return [fetchedCityWeather, isError, setIsError];
+  return [fetchedCityWeather, isError];
 };
 
 export default useFetchCityForecast;

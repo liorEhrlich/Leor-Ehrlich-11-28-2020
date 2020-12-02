@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import Button from "../../common/Button";
@@ -7,11 +8,18 @@ import ToggleFavoriteContainer from "../toggleFavorite/ToggleFavoriteContainer";
 import useFetchCityForecast from "../useFetchCityForecast";
 
 const CityOverview = ({ cityName, cityWeather, addCityWeather }) => {
-  const [cityForecast, isError, setIsError] = useFetchCityForecast(
+  const [cityForecast, isError] = useFetchCityForecast(
     cityName,
     cityWeather,
     addCityWeather
   );
+  const [isErrorModalShown, setIsErrorModalShown] = useState(isError);
+
+  useEffect(() => {
+    if (isError) {
+      setIsErrorModalShown(true);
+    }
+  }, [isError]);
 
   return (
     <Wrapper>
@@ -21,14 +29,12 @@ const CityOverview = ({ cityName, cityWeather, addCityWeather }) => {
         <ToggleFavoriteContainer />
       </TopSection>
 
-      {isError && (
-        <Modal isOpen={isError}>
-          <div>Sorry, the server is not responding.</div>
-          <Button onClick={() => setIsError(false)}>
-            I'll try again later
-          </Button>
-        </Modal>
-      )}
+      <Modal isOpen={isErrorModalShown}>
+        <div>Sorry, the server is not responding.</div>
+        <Button onClick={() => setIsErrorModalShown(false)}>
+          I'll try again later
+        </Button>
+      </Modal>
 
       {cityForecast.length ? (
         <>
