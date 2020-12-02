@@ -33,6 +33,7 @@ const City = styled.li`
   padding: 5px;
   border-bottom: 2px solid ${props => props.theme.colors.primaryContrast};
   transition: 0.3s;
+  color: ${props => props.theme.colors.defaultFont};
 
   :last-of-type {
     border-bottom: none;

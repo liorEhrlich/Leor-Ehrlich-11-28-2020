@@ -4,11 +4,18 @@ import Toggle from "../../common/Toggle";
 
 import Logo from "../Logo";
 
-const Header = ({ onSetIsHomeSelected, isFerenheit, setIsFerenheit }) => (
+const Header = ({ onSetIsHomeSelected, isFerenheit, setIsFerenheit, isThemeLight, setIsThemeLight }) => (
   <Wrapper>
     <Logo />
 
     <ButtonsWrapper>
+      <Toggle
+        onLabel="☀"
+        offLabel="☾"
+        onToggle={setIsThemeLight}
+        isOn={isThemeLight}
+      />
+
       <Toggle
         onLabel="°F"
         offLabel="°C"

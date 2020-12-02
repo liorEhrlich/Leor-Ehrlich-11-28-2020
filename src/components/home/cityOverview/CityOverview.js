@@ -43,7 +43,7 @@ const Wrapper = styled.div`
 
 const Name = styled.h2`
   font-size: 28px;
-  color: ${props => props.theme.colors.primaryBackground};
+  color: ${props => props.theme.colors.defaultFont};
   background-color: ${props => props.theme.colors.secondary};
   padding: 5px;
   border-radius: 2px;
